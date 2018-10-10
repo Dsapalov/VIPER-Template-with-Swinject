@@ -1,1 +1,4 @@
-# VIPER-Template-with-Swinject
+# iOS-VIPER-Template-Generator
+
+# Installation
+Go to path: ~/Library/Developer/Xcode/Templates
