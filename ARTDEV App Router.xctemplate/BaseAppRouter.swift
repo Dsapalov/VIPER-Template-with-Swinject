@@ -15,13 +15,13 @@ public protocol IProductRouter: class {
     func presentModule(module: Module, parameters: [String: Any], presentType: PresentType)
 }
 
-public class BaseAppsRouter: NSObject, IAppsRouter, UINavigationControllerDelegate {
+public class BaseAppRouter: NSObject, IAppRouter, UINavigationControllerDelegate {
     private var assembler: Assembler!
-    private var products: [String: (_ appsRouter: IAppsRouter) -> IProductRouter] = [:]
+    private var products: [String: (_ appRouter: IAppRouter) -> IProductRouter] = [:]
     let appDelegate = UIApplication.shared.delegate
     private var navigationController: UINavigationController?
     
-    init(assembler: Assembler, products: [String: (_ appsRouter: IAppsRouter) -> IProductRouter]) {
+    init(assembler: Assembler, products: [String: (_ appRouter: IAppRouter) -> IProductRouter]) {
         self.assembler = assembler
         self.products = products
     }

@@ -15,9 +15,9 @@ public protocol I___VARIABLE_productName:identifier___Wireframe: class {
 }
 
 public class ___VARIABLE_productName:identifier___Wireframe: I___VARIABLE_productName:identifier___Wireframe {
-    let router: IAppsRouter
+    let router: IAppRouter
 
-    init(router: IAppsRouter) {
+    init(router: IAppRouter) {
         self.router = router
     }
 

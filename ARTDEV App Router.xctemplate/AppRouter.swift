@@ -16,7 +16,7 @@ public enum PresentType {
     case root, push, present, presentWithNavigationBar, modal, modalWithNavigationBar
 }
 
-public protocol IAppsRouter {
+public protocol IAppRouter {
     var resolver: Resolver { get }
     func present(view: UIViewController, animatedDisplay: Bool, animatedDismiss: Bool, presentType: PresentType)
     func popToRootViewController(animated: Bool)
@@ -24,13 +24,13 @@ public protocol IAppsRouter {
     func dismiss()
 }
 
-public class AppsRouter: BaseAppsRouter {
-    public static let shared = AppsRouter.createAppsRouter()
+public class AppRouter: BaseAppRouter {
+    public static let shared = AppRouter.createAppRouter()
     public static var assembler = Assembler()
-    public static var products: [String: (_ appsRouter: IAppsRouter) -> IProductRouter] = [:]
+    public static var products: [String: (_ appRouter: IAppRouter) -> IProductRouter] = [:]
 
-    private static func createAppsRouter() -> AppsRouter {
-        let router = AppsRouter(assembler: assembler, products: products)
+    private static func createAppRouter() -> AppRouter {
+        let router = AppRouter(assembler: assembler, products: products)
         return router
     }
 }
